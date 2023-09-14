@@ -3,6 +3,7 @@ const router = express.Router();
 const User = require('../models/user');
 const bcrypt = require('bcrypt');
 const Post = require('../models/post');
+const Comment = require('../models/comment');
 const verifyToken = require('../verifyToken')
 
 
