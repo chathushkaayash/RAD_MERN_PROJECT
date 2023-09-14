@@ -57,5 +57,5 @@ router.get("/post/:postId",async (req,res)=>{
 })
 
 
-
+//export modules
 module.exports = router;

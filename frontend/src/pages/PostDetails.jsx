@@ -34,7 +34,7 @@ One sunny day, as Max was about to sip his first glass of water, he decided to p
                 </div>
                 
             </div>
-     
+                //create a comment 
             <div className="flex flex-col w-full mt-4 md:flex-row">
                 <input type="text" placeholder="write a comment" className="border border-black px-4 py-2 mt-4 rounded-lg outline-none md:w-[80%] md:mt-0"/>
                 <button className="px-4 py-2 mt-4 text-sm  text-white bg-black rounded-lg md:w-[20%] md:mt-0">Add comment</button>
