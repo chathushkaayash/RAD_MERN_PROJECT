@@ -1,4 +1,5 @@
-
+import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
 import { ImCross } from "react-icons/im";
 import { useContext, useState } from 'react'
 
@@ -24,6 +25,7 @@ const EditPost = () => {
      }
     return (
         <div>
+            <Navbar />
             <div className="px-6 md:px[200px] mt-8">
                 <h1 className="text-xl font-bold md:text-2xl">Update a post</h1>
                 <form className="flex flex-col w-full mt-4 space-y-4 md:space-y-8">
@@ -55,6 +57,7 @@ const EditPost = () => {
 
                 </form>
             </div>
+            <Footer />
         </div>
     )
 }
