@@ -59,7 +59,6 @@ const CreatePost = () => {
           }
         }
         //post upload
-        // console.log(post)
         try{
           const res=await axios.post(URL+"/api/posts/create",post,{withCredentials:true})
           navigate("/posts/post/"+res.data._id)

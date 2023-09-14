@@ -25,7 +25,6 @@ const PostDetails = () => {
   const fetchPost=async()=>{
     try{
       const res= await axios.get(URL+"/api/posts/"+postId)
-      // console.log(res.data)
       setPost(res.data)
     }
     catch(err){
