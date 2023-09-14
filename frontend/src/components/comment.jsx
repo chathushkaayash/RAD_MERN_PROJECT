@@ -2,6 +2,7 @@ import { BiEdit } from "react-icons/bi";
 import { MdDelete } from "react-icons/md";
 
 const Comment = ()=>{
+    
     return(
         <div className="px-2 py-2 mt-2 bg-gray-200 rounded-lg">
                 <div className="flex items-center justify-between"> 
