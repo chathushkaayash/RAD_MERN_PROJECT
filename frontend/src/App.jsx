@@ -1,5 +1,12 @@
 
 import {Route, Routes} from "react-router-dom";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import PostDetails from "./pages/postDetails";
+import CreatePost from "./pages/createPost";
+import EditPost from "./pages/EditPost";
+import Profile from "./pages/Profile";
 import { UserContextProvider } from "./context/UserContext";
 
 
@@ -9,6 +16,7 @@ import { UserContextProvider } from "./context/UserContext";
 const App = () => {
   return (
     
+      <UserContextProvider>
       <Routes>
         <Route exact path = "/" element= {<Home />} />
         <Route exact path ="/login" element={<Login/>} />
@@ -20,6 +28,7 @@ const App = () => {
         
         
       </Routes>
+      </UserContextProvider>
       
       
    
