@@ -5,30 +5,30 @@ import { URL } from "../url";
 import { useContext, useState } from "react";
 import { UserContext } from "../context/UserContext";
 
-const Comment = ({ c, post, updatedComment, onCommentUpdate }) => {
+const Reply = ({ c, post, updatedReply, onReplyUpdate }) => {
   const { user } = useContext(UserContext);
   const [isEditing, setIsEditing] = useState(false);
-  const [editedComment, setEditedComment] = useState(updatedComment);
+  const [editedReply, setEditedReply] = useState(updatedReply);
 
-  const deleteComment = async (id) => {
+  const deleteReply = async (id) => {
     try {
-      await axios.delete(URL + "/api/comments/" + id, { withCredentials: true });
+      await axios.delete(URL + "/api/replies/" + id, { withCredentials: true });
       window.location.reload(true);
     } catch (err) {
       console.log(err);
     }
   };
 
-  const updateComment = async (id) => {
+  const updateReply = async (id) => {
     try {
       await axios.put(
-        URL + "/api/comments/" + id,
-        { comment: editedComment },
+        URL + "/api/replies/" + id,
+        { reply: editedReply },
         { withCredentials: true }
       );
 
       // Notify the parent component about the update
-      onCommentUpdate(c._id, editedComment); // Pass the comment id and edited comment
+      onReplyUpdate(c._id, editedReply); // Pass the reply id and edited reply
 
       setIsEditing(false);
     } catch (err) {
@@ -49,17 +49,17 @@ const Comment = ({ c, post, updatedComment, onCommentUpdate }) => {
                 <>
                   <input
                     type="text"
-                    value={editedComment}
-                    onChange={(e) => setEditedComment(e.target.value)}
+                    value={editedReply}
+                    onChange={(e) => setEditedReply(e.target.value)}
                   />
-                  <button onClick={() => updateComment(c._id)}>Save</button>
+                  <button onClick={() => updateReply(c._id)}>Save</button>
                 </>
               ) : (
                 <>
                   <p className="cursor-pointer" onClick={() => setIsEditing(c._id)}>
                     <MdEdit />
                   </p>
-                  <p className="cursor-pointer" onClick={() => deleteComment(c._id)}>
+                  <p className="cursor-pointer" onClick={() => deleteReply(c._id)}>
                     <MdDelete />
                   </p>
                 </>
@@ -70,9 +70,9 @@ const Comment = ({ c, post, updatedComment, onCommentUpdate }) => {
           )}
         </div>
       </div>
-      <p className="px-4 mt-2">{isEditing ? "" : c.comment}</p>
+      <p className="px-4 mt-2">{isEditing ? "" : c.reply}</p>
     </div>
   );
 };
 
-export default Comment;
+export default Reply;

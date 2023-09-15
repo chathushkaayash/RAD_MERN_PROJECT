@@ -1,7 +1,7 @@
 const mongoose=require('mongoose')
 
-const CommentSchema=new mongoose.Schema({
-    comment:{
+const ReplySchema=new mongoose.Schema({
+    reply:{
         type:String,
         required:true,
     },
@@ -9,7 +9,7 @@ const CommentSchema=new mongoose.Schema({
         type:String,
         required:true,
     },
-    postId:{
+    forumId:{
         type:String,
         required:true,
     },
@@ -19,4 +19,4 @@ const CommentSchema=new mongoose.Schema({
     }
 },{timestamps:true})
 
-module.exports=mongoose.model("Comment",CommentSchema)
+module.exports=mongoose.model("Reply",ReplySchema)
